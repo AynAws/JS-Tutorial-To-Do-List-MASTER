@@ -11,15 +11,16 @@ const CHECK = 'fa-check-circle';
 const UNCHECK = 'fa-circle-thin';
 const LINE_THROUGH = 'lineThrough';
 
-// Show todays date
+// Var
+let LIST, id;
 
+// Show todays date
 const options = {weekday: 'long', month: 'short', day:'numeric'}
 const today = new Date();
 
 dateElement.innerHTML = today.toLocaleDateString('en-US', options);
 
 // add to do function
-
 function addToDo(toDo, id, done, trash) {
     if (trash) {return;}
     const DONE = done ? CHECK : UNCHECK;
@@ -46,4 +47,6 @@ document.addEventListener('keyup', function(even) {
         }
         input.value = ''
     }
-})
+});
+
+addToDo('Coffee', 1, false, true)
